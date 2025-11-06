@@ -63,7 +63,7 @@ export const Workspace = () => {
     if (effectCalled.current) return; 
     effectCalled.current = true;
      simulate();
-    generateProject(currentPrompt);
+    // generateP(currentPrompt);
   }, []);
 
 
@@ -152,7 +152,7 @@ export const Workspace = () => {
 
   }
 
-  const generateProject = async (promptText: string, type=0, html=null, css=null, js=null) => {
+  const generatePooP = async (promptText: string, type=0, html=null, css=null, js=null) => {
     setIsGenerating(true);
     try {
       // Generate the actual code
