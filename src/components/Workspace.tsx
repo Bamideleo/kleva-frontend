@@ -156,86 +156,86 @@ export const Workspace = () => {
     setIsGenerating(true);
     try {
       // Generate the actual code
-  const result = await aiService.generateProject(promptText, type, html,css, js); 
-  const files = result.files;
-      setGeneratedCode(files);
+  // const result = await aiService.generateProject(promptText, type, html,css, js); 
+  // const files = result.files;
+  //     setGeneratedCode(files);
 
-      // Create file structure
-      const structure: FileNode[] = [
-        {
-          name: 'src',
-          type: 'folder',
-          path: 'src',
-          isOpen: true,
-          children: [
-            {
-              name: 'index.html',
-              type: 'file',
-              path: 'src/index.html',
-              content:files.html
-            },
-            {
-              name: 'styles',
-              type: 'folder',
-              path: 'src/styles',
-              isOpen: true,
-              children: [
-                {
-                  name: 'main.css',
-                  type: 'file',
-                  path: 'src/styles/main.css',
-                  content:files.css
-                },
-                {
-                  name: 'components.css',
-                  type: 'file',
-                  path: 'src/styles/components.css',
-                  content: '/* Component-specific styles */'
-                }
-              ]
-            },
-            {
-              name: 'scripts',
-              type: 'folder',
-              path: 'src/scripts',
-              isOpen: true,
-              children: [
-                {
-                  name: 'main.js',
-                  type: 'file',
-                  path: 'src/scripts/main.js',
-                  content: files.js
-                },
-                {
-                  name: 'utils.js',
-                  type: 'file',
-                  path: 'src/scripts/utils.js',
-                  content: '// Utility functions'
-                }
-              ]
-            },
-            {
-              name: 'assets',
-              type: 'folder',
-              path: 'src/assets',
-              isOpen: false,
-              children: [
-                {
-                  name: 'images',
-                  type: 'folder',
-                  path: 'src/assets/images',
-                  children: []
-                },
-                {
-                  name: 'fonts',
-                  type: 'folder',
-                  path: 'src/assets/fonts',
-                  children: []
-                }
-              ]
-            }
-          ]
-        },
+ 
+  //     const structure: FileNode[] = [
+  //       {
+  //         name: 'src',
+  //         type: 'folder',
+  //         path: 'src',
+  //         isOpen: true,
+  //         children: [
+  //           {
+  //             name: 'index.html',
+  //             type: 'file',
+  //             path: 'src/index.html',
+  //             content:files.html
+  //           },
+  //           {
+  //             name: 'styles',
+  //             type: 'folder',
+  //             path: 'src/styles',
+  //             isOpen: true,
+  //             children: [
+  //               {
+  //                 name: 'main.css',
+  //                 type: 'file',
+  //                 path: 'src/styles/main.css',
+  //                 content:files.css
+  //               },
+  //               {
+  //                 name: 'components.css',
+  //                 type: 'file',
+  //                 path: 'src/styles/components.css',
+  //                 content: '/* Component-specific styles */'
+  //               }
+  //             ]
+  //           },
+  //           {
+  //             name: 'scripts',
+  //             type: 'folder',
+  //             path: 'src/scripts',
+  //             isOpen: true,
+  //             children: [
+  //               {
+  //                 name: 'main.js',
+  //                 type: 'file',
+  //                 path: 'src/scripts/main.js',
+  //                 content: files.js
+  //               },
+  //               {
+  //                 name: 'utils.js',
+  //                 type: 'file',
+  //                 path: 'src/scripts/utils.js',
+  //                 content: '// Utility functions'
+  //               }
+  //             ]
+  //           },
+  //           {
+  //             name: 'assets',
+  //             type: 'folder',
+  //             path: 'src/assets',
+  //             isOpen: false,
+  //             children: [
+  //               {
+  //                 name: 'images',
+  //                 type: 'folder',
+  //                 path: 'src/assets/images',
+  //                 children: []
+  //               },
+  //               {
+  //                 name: 'fonts',
+  //                 type: 'folder',
+  //                 path: 'src/assets/fonts',
+  //                 children: []
+  //               }
+  //             ]
+  //           }
+  //         ]
+  //       },
         {
           name: 'package.json',
           type: 'file',
